@@ -1,0 +1,100 @@
+.containerMainC{
+    width: 100%;
+    display: flex;
+    height: 80%;
+    background-color: rgb(218, 218, 218);
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+.containerPrinMainC{
+    height: 100%;
+}
+.containerMainC ul {
+    text-align: center;
+    list-style: none;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+.divLabelAddRem{
+    position: absolute;
+    background-color: rgb(255, 73, 73);
+    bottom: 0px;
+    right: 0px;
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.containerMainC li {
+    text-align: center;
+}
+.tagM{
+    background-color: rgb(0, 136, 255);
+    font-weight: 700;
+    padding: 5px;
+}
+.ulMañana{
+    width: 25%;
+}
+.ulTarde{
+    width: 25%;
+
+}
+.ulTardeB{
+    width: 25%;
+
+}
+.ulNoche{
+    width: 25%;
+
+}
+.liMoviles{
+    padding: 5px;
+}
+.liMoviles p {
+    margin: 0px;
+}
+.liMoviles:nth-child(2n+1) {
+    background-color: rgb(255, 255, 255);
+}
+.novedadesDv{
+    height: 20%;
+    background-color: rgb(245, 231, 215);
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.novedadesDv li {
+    list-style: none;
+}
+.listaNovedades{
+    justify-content: flex-start;
+    width: 50%;
+    height: 100%;
+}
+.dvTextArea{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.dvTextArea textarea{
+    height: 100%;
+    width: 100%;
+}
+.titleNov{
+    margin: 2px;
+    font-size: 15px;
+}
+.title p {
+    margin: 0px;
+}
+.ulNovedades {
+    margin: 0px;
+    padding: 0px;
+}

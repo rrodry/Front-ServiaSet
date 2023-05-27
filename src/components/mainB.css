@@ -1,0 +1,105 @@
+.containerMainB, .containerPrincipalMainB,.containerMainBBtns{
+    width: 100%;
+    background-color: rgb(255, 255, 255);    
+}
+.containerPrincipalMainB{
+    height: 100%;
+    text-align: center;
+    
+    
+}
+.containerMainB{
+    display: flex;
+    height: 90%;
+    font-family: 'Roboto', sans-serif;
+    
+}
+.containerMainB button{
+    border: none;
+    font-size: small;
+    margin-left: 10px;
+    box-shadow: 0px 0px 2px 1px black;
+}
+.btnIncrement, .btnDecrement, .deleteBase{
+    border: none;
+    font-size: small;
+    margin-left: 10px;
+    box-shadow: 0px 0px 2px 1px rgb(223, 52, 52);
+    height: 8;
+    width: 20;
+}
+.btnIncrement:hover{
+    background-color: green;
+    transition: all 0.5s;
+}
+.deleteBase:hover{
+    background-color: rgb(255, 0, 0);
+    transition: all 0.5s;
+    
+}
+.btnDecrement:hover{
+    transition: all 0.5s;
+    background-color: rgb(255, 102, 0);
+}
+.containerMainBBtns{
+    display: flex;
+    text-align: center;
+    background: rgb(196, 202, 255);
+    height: 10%;
+    align-items: center;
+    padding: 10px 0;
+}
+.containerMainBBtns button{
+    white-space: nowrap;
+    background: none;
+    border:none;
+    border-radius: 4px;
+    box-shadow: 0px 0px 2px 0px;
+    margin: 2px;
+    height: 30px;
+    background: rgb(128, 229, 255);
+}
+.containerMainBBtns button:hover{
+    transform: scale(1.05);
+    background-color: darkseagreen;
+    transition: all 0.5s ease-in-out;
+    
+}
+.containerMainBBtns input{
+    height: 25px;
+    max-width: 200px;
+    border-radius: 5px ;
+    border: 1px solid rgb(128, 229, 255);
+    box-shadow: 0px 0px 2px 3px rgb(128, 229, 255);
+}
+.containerMainBBtns input:focus{
+    outline: none;
+}
+.containerMainBBtns button:hover:nth-child(3){
+    background-color: red;
+}
+.containerMainB ul {
+    list-style: none;
+    padding: 0px;
+    
+}
+.listMoviles:nth-child(2n+1) {
+    background-color: rgb(218, 218, 218);
+}
+.tagMovil{
+    background-color: rgb(0, 136, 255);
+    font-weight: 700;
+}
+.ulOper li, .ulServicios li, .ulBtns li{
+    padding: 5px;
+}
+.ulOper{
+    width: 20%;
+}
+.ulServicios{
+    width: 20%;
+}
+
+.ulBtns{
+    width: 60%
+}

@@ -1,0 +1,19 @@
+.containerMain {
+    display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "hd hd hd "
+            "mn sd sd ";
+}
+.hd{
+    grid-area: hd;
+    height: 10vh;
+}
+.sd{
+    grid-area: sd;
+    height: 90vh;
+}
+.mn{
+    grid-area: mn;
+    height: 90vh;
+}

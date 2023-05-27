@@ -1,0 +1,61 @@
+.header{
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "ic btns exit ";
+    align-items: center;
+    padding: 0px;
+}
+.icon{
+    grid-area: ic;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btns{
+    grid-area: btns;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.but{
+    background: none;
+    border: none;
+    margin: 5px;
+    width: 100px;
+    color: rgb(90, 90, 90);
+    border-radius: 5px;
+    padding: 5px;
+}
+.but:hover{
+    color: black;
+    background-color: rgb(220, 222, 248);
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+.exit{
+    grid-area: exit;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+.butEX{
+    margin-right: 20px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(255, 113, 113);
+    color: rgb(77, 77, 77);
+}
+.butEX:hover{
+    color: black;
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+.icon107{
+    max-width: 250px;
+}
