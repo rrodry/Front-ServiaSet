@@ -4,7 +4,6 @@ import { Navigate } from "react-router-dom";
 import Header from './Header'
 import MainB from './MainB';
 import MainC from './MainC'
-import Footer from './Footer'
 import { useEffect, useState } from 'react';
 export default function Main() {
     const token = Cookies.get("token")

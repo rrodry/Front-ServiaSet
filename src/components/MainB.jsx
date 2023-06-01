@@ -3,8 +3,8 @@ import './mainB.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { getServ, increment, addBase, deleteBase } from '../slices/reducerSlices/reducerSlices'
 import axios from 'axios'
-import { handleAddBase, handleDeleteBase, handleEndShift } from '../middleware/middle'
-
+import { handleAddBase, handleDeleteBase, handleEndShift, handleResetList } from '../middleware/middle'
+import iconReset from '../images/reset.png'
 
 export default function MainB() {
     const dispatch = useDispatch()
@@ -15,6 +15,8 @@ export default function MainB() {
     const serv = useSelector((state) => state.services.moviles)
     const novedades = useSelector((state) => state.oldServices.novedades)
     
+
+
     let movilKey = 0
     let servKey = 0
     let btnsKey = 0
@@ -37,6 +39,7 @@ export default function MainB() {
     return (
         <div className='containerPrincipalMainB'>
             <div className="containerMainB">
+            <button className="btnReset" onClick={() => { handleResetList() }}><img src={iconReset} className='iconReset'></img></button>
                 <ul className='ulOper' key={"ulMovil"}>
                     <li key={"TagMovil"} className='tagMovil'>
                         <p>Movil</p>
@@ -62,6 +65,7 @@ export default function MainB() {
                     })}
                 </ul>
             </div>
+
             <div className="containerMainBBtns" key={"divInputAdd"}>
                 
                 <input type="text" name="addMovil" onChange={ (e) =>{ setBase( {...base, base: e.target.value} ) } }/>
@@ -70,6 +74,5 @@ export default function MainB() {
                 
             </div>
         </div>
-
     )
 }

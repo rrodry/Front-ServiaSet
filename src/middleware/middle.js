@@ -1,7 +1,7 @@
 import axios from "axios"
 import Cookies from "js-cookie";
 
-const local = "https://servicesset.onrender.com"
+const local = "http://localhost:3001" // "https://servicesset.onrender.com"
 
 export async function loginM(user, setError, errorM) {
   try {
@@ -13,7 +13,6 @@ export async function loginM(user, setError, errorM) {
     console.log(error);
   }
 }
-
 export async function incrementMiddle(movil) {
   axios.post(`${local}/increment?movil=${movil}`)
 }
@@ -26,11 +25,17 @@ export async function handleConnect(action, iod) {
 export async function handleDeleteBase(action) {
   return await axios.delete(`${local}/deleteBase?movil=${action}`)
 }
-export async function handleEndShift(state,novedades) {
+export async function handleEndShift(state,novedades,moviles) {
   let today = new Date()
   var date = today.getDate()
   const cookie = Cookies.get("token")
-  const tokenDecode = (await axios.get(`${local}/decode?token=${cookie}`)).data.turno
+  let tokenDecode = (await axios.get(`${local}/decode?token=${cookie}`)).data.turno
+
+  if (tokenDecode === "noche") {
+    today = today.setDate(today.getDate() - 1)
+    today = new Date(today)
+    date = today.getDate()
+  }
   await axios.post(`${local}/endShift`, {
     state,
     date,
@@ -43,4 +48,16 @@ export async function handleEndShift(state,novedades) {
   })
   Cookies.remove("novedades")
   document.getElementById('textAreaNovedades').value = ""
+}
+export async function handleResetList() {
+  await axios.post(`${local}/resetList`)
+}
+export async function handleAdmin(){
+  try {
+    const cookie = Cookies.get("token")
+    const tokenDecode = (await axios.get(`${local}/decode?token=${cookie}`)).data.isAdmin
+    return tokenDecode
+  } catch (error) {
+    console.log(error);
+  }
 }

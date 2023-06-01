@@ -2,9 +2,13 @@ import './header.css'
 import setIcon from '../images/set.png'
 import Cookies from 'js-cookie'
 import { useNavigate  } from "react-router-dom";
+import { handleAdmin  } from '../middleware/middle';
 
 
 export default function Header() {
+    let admin = ""
+    
+    
     const navigate = useNavigate()
     function handleLogOut(){
         Cookies.remove("token")
@@ -18,6 +22,7 @@ export default function Header() {
             <div className="btns">
                 <button className="but" type='button'>Incio</button>
                 <button className="but" type='button'>Servicios</button>
+                {admin &&  <button className="but" type='button'>Admin Panel</button> }
             </div>
             <div className="exit">
                 <button className="butEX" type='button' onClick={() => { handleLogOut() }}>SALIR</button>

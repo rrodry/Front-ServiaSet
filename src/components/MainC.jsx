@@ -19,7 +19,6 @@ export default function MainC() {
     }
 
     const servOld = useSelector((state) => state.oldServices)
-    console.log(servOld);
 
     return (
         <div className='containerPrinMainC'>
@@ -30,46 +29,111 @@ export default function MainC() {
                         <p>{msg}</p>
                     }
                 </div>
-                <ul key="ulMañanaPlanilla" className='ulMañana'>
-                    <li key={"tagTM"} className='tagM'><p>Turno Mañana</p></li>
-                    {servOld && servOld.serviciosOld.map(e => {
-                        if (e.turno === "mañana") {
-                            return e.state.map(el => {
-                                return <li key={`liM${keyliM++}`} className='liMoviles'> <p> {el.movil + " " + el.servicios} </p> </li>
-                            })
-                        }
-                    })}
-                </ul>
-                <ul key="ulTardeAPlanilla" className='ulTarde'>
-                    <li key={"tagTT"} className='tagM'><p>Turno TardeA</p></li>
-                    {servOld && servOld.serviciosOld.map(e => {
-                        if (e.turno === "tarde") {
-                            return e.state.map(el => {
-                                return <li key={`liM${keyliM++}`} className="liMoviles"> <p> {el.movil + " " + el.servicios} </p> </li>
-                            })
-                        }
-                    })}
-                </ul>
-                <ul key="ulTardeBPlanilla" className="ulTardeB">
-                    <li key={"tagTT2"} className='tagM'><p>Turno TardeB</p></li>
-                    {servOld && servOld.serviciosOld.map(e => {
-                        if (e.turno === "tarde2") {
-                            return e.state.map(el => {
-                                return <li key={`liM${keyliM++}`} className='liMoviles'> <p> {el.movil + " " + el.servicios} </p> </li>
-                            })
-                        }
-                    })}
-                </ul>
-                <ul key="ulNochePlanilla" className='ulNoche'>
-                    <li key={"tagTN"} className='tagM'><p>Turno Noche</p></li>
-                    {servOld && servOld.serviciosOld.map(e => {
-                        if (e.turno === "noche") {
-                            return e.state.map(el => {
-                                return <li key={`liM${keyliM++}`} className='liMoviles'> <p> {el.movil + " " + el.servicios} </p> </li>
-                            })
-                        }
-                    })}
-                </ul>
+                <div className='divList'>
+                    <div className='tagM'>
+                        <h4>Turno Mañana</h4>
+                    </div>
+                    <div className='ulDv'>
+                        <ul key="ulMañanaPlanilla" className='ulList'>
+                            {servOld && servOld.serviciosOld.map(e => {
+                                if (e.turno === "mañana") {
+                                    return e.state.map(el => {
+                                        return <li key={`liM${keyliM++}`} className='liMoviles'> <p> {el.movil} </p> </li>
+                                    })
+                                }
+                            })}
+                        </ul>
+                        <ul key="ulMañanaPlanilla" className='ulListServ'>
+                            {servOld && servOld.serviciosOld.map(e => {
+                                if (e.turno === "mañana") {
+                                    return e.state.map(el => {
+                                        return <li key={`liM${keyliM++}`} className='liMoviles'> <p> {el.servicios} </p> </li>
+                                    })
+                                }
+                            })}
+                        </ul>
+                    </div>
+                </div>
+                <div className='divList'>
+                    <div className='tagM'>
+                        <h4>Turno Tarde</h4>
+                    </div>
+                    <div className='ulDv'>
+                        <ul key="ulTardeAPlanilla" className='ulList'>
+                            {servOld && servOld.serviciosOld.map(e => {
+                                if (e.turno === "tarde") {
+                                    return e.state.map(el => {
+                                        return <li key={`liM${keyliM++}`} className="liMoviles"> <p> {el.movil } </p> </li>
+                                    })
+                                }
+                            })}
+                        </ul>
+                        <ul key="ulTardeAPlanilla" className='ulListServ'>
+                            {servOld && servOld.serviciosOld.map(e => {
+                                if (e.turno === "tarde") {
+                                    return e.state.map(el => {
+                                        return <li key={`liM${keyliM++}`} className="liMoviles"> <p> {el.servicios } </p> </li>
+                                    })
+                                }
+                            })}
+                        </ul>
+                    </div>
+                </div>
+                <div className='divList'>
+                    <div className='tagM'>
+                        <h4>Turno Tarde/noche</h4>
+                    </div>
+                    <div className='ulDv'>
+                        <ul key="ulTardeBPlanilla" className="ulList">
+                            {servOld && servOld.serviciosOld.map(e => {
+                                if (e.turno === "tarde2") {
+                                    return e.state.map(el => {
+                                        return <li key={`liM${keyliM++}`} className='liMoviles'> <p> {el.movil} </p> </li>
+                                    })
+                                }
+                            })}
+                        </ul>
+                        <ul key="ulTardeBPlanilla" className="ulListServ">
+                            {servOld && servOld.serviciosOld.map(e => {
+                                if (e.turno === "tarde2") {
+                                    return e.state.map(el => {
+                                        return <li key={`liM${keyliM++}`} className='liMoviles'> <p> {el.servicios} </p> </li>
+                                    })
+                                }
+                            })}
+                        </ul>
+                    </div>
+                </div>
+                
+                <div className='divList'>
+                    <div className='tagM'>
+                        <h4>Turno noche</h4>
+                    </div>
+                    <div className='ulDv'>
+                        <ul key="ulNochePlanilla" className='ulList'>
+                            <div className='divLi'>
+                                {servOld && servOld.serviciosOld.map(e => {
+                                    if (e.turno === "noche") {
+                                        return e.state.map(el => {
+                                            return <li key={`liM${keyliM++}`} className='liMoviles'> <p> {el.movil} </p> </li>
+                                        })
+                                    }
+                                })}
+                            </div>
+                        </ul>
+                        <ul key="ulNochePlanilla" className='ulListServ'>
+                            <div className='divLi'>
+                                {servOld && servOld.serviciosOld.map(e => {
+                                    if (e.turno === "noche") {
+                                        return e.state.map(el => {
+                                            return <li key={`liM${keyliM++}`} className='liMoviles'> <p> {el.servicios} </p> </li>
+                                        })
+                                    }
+                                })}
+                            </div>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div className='novedadesDv'>
                 <div className='listaNovedades'>
@@ -78,7 +142,7 @@ export default function MainC() {
                     </div>
                     <div className='novedades'>
                         <ul className='ulNovedades'>
-                            {servOld && servOld.serviciosOld.map(e => {return <li key={"liNovedades"+keyliM++}> {e.novedades}</li>})}
+                            {servOld && servOld.serviciosOld.map(e => { return <li key={"liNovedades" + keyliM++}> {e.novedades}</li> })}
                         </ul>
                     </div>
                 </div>
