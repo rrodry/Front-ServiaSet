@@ -9,7 +9,7 @@ import iconReset from '../images/reset.png'
 export default function MainB() {
     const dispatch = useDispatch()
     useEffect(() => {
-        axios.get('http://localhost:3001/services')
+        axios.get('http://18.232.48.97:3001/services')
             .then((response) => dispatch(getServ(response.data)))
     }, [dispatch])
     const serv = useSelector((state) => state.services.moviles)
@@ -25,7 +25,7 @@ export default function MainB() {
         base:""
     })
     async function handleConnect(action, iod) {
-        const res = await axios.post(`http://localhost:3001/increment?movil=${action}&iod=${iod}`)
+        const res = await axios.post(`http://18.232.48.97:3001/increment?movil=${action}&iod=${iod}`)
         if (!iod) {
             document.getElementsByClassName("divLabelAddRem")[0].style.background = "rgb(255, 73, 73)"
         } else document.getElementsByClassName("divLabelAddRem")[0].style.background = "rgb(92, 247, 92)"

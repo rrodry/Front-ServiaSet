@@ -1,7 +1,7 @@
 import axios from "axios"
 import Cookies from "js-cookie";
 
-const local = "http://localhost:3001" // "https://servicesset.onrender.com"
+const local = "http://18.232.48.97:3001" // "https://servicesset.onrender.com"
 
 export async function loginM(user, setError, errorM) {
   try {
@@ -30,7 +30,6 @@ export async function handleEndShift(state,novedades,moviles) {
   var date = today.getDate()
   const cookie = Cookies.get("token")
   let tokenDecode = (await axios.get(`${local}/decode?token=${cookie}`)).data.turno
-
   if (tokenDecode === "noche") {
     today = today.setDate(today.getDate() - 1)
     today = new Date(today)
