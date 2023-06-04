@@ -1,7 +1,7 @@
 import axios from "axios"
 import Cookies from "js-cookie";
 
-const local = "https://servset-v01-production.up.railway.app" // "https://servicesset.onrender.com"
+const local = "http://localhost:3001" // "https://servset-v01-production.up.railway.app"
 
 export async function loginM(user, setError, errorM) {
   try {

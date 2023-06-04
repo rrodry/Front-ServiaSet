@@ -14,7 +14,7 @@ export default function MainC() {
         getServOldFun()
     }, [dispatch])
     async function getServOldFun() {
-        return await axios.get(`http://18.232.48.97:3001/getServOld`)
+        return await axios.get(`http://localhost:3001/getServOld`)
             .then((resp) => dispatch(getServOld(resp.data)))
     }
 
