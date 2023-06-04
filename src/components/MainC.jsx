@@ -14,7 +14,7 @@ export default function MainC() {
         getServOldFun()
     }, [dispatch])
     async function getServOldFun() {
-        return await axios.get(`http://localhost:3001/getServOld`)
+        return await axios.get(`https://servset-v01-production.up.railway.app/getServOld`)
             .then((resp) => dispatch(getServOld(resp.data)))
     }
 
