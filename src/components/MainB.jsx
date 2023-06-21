@@ -39,39 +39,45 @@ export default function MainB() {
     return (
         <div className='containerPrincipalMainB'>
             <div className="containerMainB">
-            <button className="btnReset" onClick={() => { handleResetList() }}><img src={iconReset} className='iconReset'></img></button>
-                <ul className='ulOper' key={"ulMovil"}>
-                    <li key={"TagMovil"} className='tagMovil'>
-                        <p>Movil</p>
-                    </li>
-                    {serv && serv.map(e => {
-                        return <li key={`movil${movilKey++}`} className='listMoviles'> {e.movil} </li>
-                    })}
-                </ul>
-                <ul className='ulServicios' key={"ulServicios"}>
-                    <li key={"TagServ"} className='tagMovil'>
-                        <p>Servicios</p>
-                    </li>
-                    {serv && serv.map(e => {
-                        return <li key={`serv${servKey++}`} className='listMoviles'>  {e.servicios} </li>
-                    })}
-                </ul>
-                <ul className="ulBtns" key={"ulBtns"}>
-                    <li key={"TagBtns"} className='tagMovil'><p>Agregar o Quitar</p></li>
-                    {serv && serv.map(e => {
-                        return <li key={`li${btnsKey++}`} className='listMoviles'><button key={"btn1"} className='btnIncrement ' name={e.movil} onClick={(el) => { handleConnect(el.target.name,true).then((res) => dispatch(increment(res.data))) }} >+</button><button key={"btn2"} name={e.movil}  className='btnDecrement' onClick={(el) => { handleConnect(el.target.name,false).then((res) => dispatch(increment(res.data))) }}>-</button>
-                        <button className='deleteBase' onClick={ (e) => { handleDeleteBase(e.target.name).then(dispatch(deleteBase(e.target.name))) } } name={e.movil}>X</button>
+            <button className="btnReset" onClick={() => { handleResetList() }}><img src={iconReset} alt='logoSet' className='iconReset'></img></button>
+                <div className='dvText'>
+                    <ul>
+                        <li>
+                            <h4>Movil</h4>
                         </li>
-                    })}
-                </ul>
+                        <li>
+                            <h4>Servicios</h4>
+                        </li>
+                        <li>
+                            <h4>Agregar/Quitar</h4>
+                        </li>
+                    </ul>
+                </div>
+                <div className='dvListSer'>
+                    <ul className='ulOper' key={"ulMovil"}>
+                        {serv && serv.map(e => {
+                            return <li key={`movil${movilKey++}`} className='listMoviles'> {e.movil} </li>
+                        })}
+                    </ul>
+                    <ul className='ulServicios' key={"ulServicios"}>
+                        {serv && serv.map(e => {
+                            return <li key={`serv${servKey++}`} className='listMoviles'>  {e.servicios} </li>
+                        })}
+                    </ul>
+                    <ul className="ulBtns" key={"ulBtns"}>
+                        {serv && serv.map(e => {
+                            return <li key={`li${btnsKey++}`} className='listMoviles'><button key={"btn1"} className='btnIncrement ' name={e.movil} onClick={(el) => { handleConnect(el.target.name,true).then((res) => dispatch(increment(res.data))) }} >+</button><button key={"btn2"} name={e.movil}  className='btnDecrement' onClick={(el) => { handleConnect(el.target.name,false).then((res) => dispatch(increment(res.data))) }}>-</button>
+                            <button className='deleteBase' onClick={ (e) => { handleDeleteBase(e.target.name).then(dispatch(deleteBase(e.target.name))) } } name={e.movil}>X</button>
+                        </li>
+                        })}
+                    </ul>
+                </div>
             </div>
 
             <div className="containerMainBBtns" key={"divInputAdd"}>
-                
                 <input type="text" name="addMovil" onChange={ (e) =>{ setBase( {...base, base: e.target.value} ) } }/>
                 <button name={base.base} onClick={ (e) => { handleAddBase(e.target.name).then((r) => dispatch(addBase(r.data))) } } >Agregar Base</button>
                 <button onClick={ () => { handleEndShift(serv,novedades) }}>Finalizar Turno</button>
-                
             </div>
         </div>
     )

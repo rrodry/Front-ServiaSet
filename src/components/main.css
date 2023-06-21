@@ -17,3 +17,13 @@
     grid-area: mn;
     height: 90vh;
 }
+.adminPanelServ{
+    width: 100%;
+    grid-area: mn;
+    height: 90vh;
+}
+.adminPanelPlanilla{
+    width: 100%;
+    grid-area: sd;
+    height: 90vh;
+}

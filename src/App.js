@@ -16,7 +16,7 @@ const router = createBrowserRouter([
   {
     path: "/main",
     element: <Main/>,
-  },
+  }
 ]);
 
 function App() {

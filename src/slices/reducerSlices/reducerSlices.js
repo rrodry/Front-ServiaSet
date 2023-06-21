@@ -2,7 +2,9 @@ import { createSlice, current } from '@reduxjs/toolkit'
 
 let initialState = {
   moviles:[],
-  msg: ""
+  msg: "",
+  adm:"",
+  adminPanel:""
 }
 
 export let counterSlice = createSlice({
@@ -36,11 +38,17 @@ export let counterSlice = createSlice({
       const estado = state.moviles.filter( e => e.movil !== action.payload)
       state.moviles = estado
       
+    },
+    isAdmin: ( state, action ) => {
+      state.adm = action.payload
+    },
+    adminPanel: (state, action) => {
+      state.adminPanel = action.payload
     }
   }
 })
 
 // Action creators are generated for each case reducer function
-export const { getServ, increment, addBase, deleteBase } = counterSlice.actions
+export const { getServ, increment, addBase, deleteBase, isAdmin, adminPanel } = counterSlice.actions
 
 export default counterSlice.reducer

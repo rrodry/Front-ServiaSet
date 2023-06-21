@@ -2,7 +2,7 @@ import axios from "axios"
 import Cookies from "js-cookie";
 
 // const local = "http://localhost:3001" 
-const local = "https://servset-v01-production.up.railway.app"
+ const local = "https://servset-v01-production.up.railway.app"
 
 export async function loginM(user, setError, errorM) {
   try {
@@ -18,6 +18,9 @@ export async function incrementMiddle(movil) {
   axios.post(`${local}/increment?movil=${movil}`)
 }
 export async function handleAddBase(el) {
+  
+  if(el === "" ) return
+
   return await axios.post(`${local}/addMovil?movilAdd=${el}`)
 }
 export async function handleConnect(action, iod) {
@@ -59,5 +62,22 @@ export async function handleAdmin(){
     return tokenDecode
   } catch (error) {
     console.log(error);
+  }
+}
+export function handleLogOut(){
+  Cookies.remove("token")
+}
+export async function handleDecode(){
+  try {
+    return await axios(`http://localhost:3001/decode?token=${Cookies.get("token")}`)
+  } catch (error) {
+    return error
+  }
+}
+export async function handleAllServicesAdmin(){
+  try {
+    return await axios(`${local}/adminPanelAll`)
+  } catch (error) {
+    throw error
   }
 }

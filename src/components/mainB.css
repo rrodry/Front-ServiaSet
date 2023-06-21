@@ -5,16 +5,33 @@
 .containerPrincipalMainB{
     height: 100%;
     text-align: center;
-    
-    
 }
 .containerMainB{
     
     position: relative;
-    display: flex;
     height: 90%;
     font-family: 'Roboto', sans-serif;
     
+}
+.dvText{
+    width: 100%;
+    padding: 5px;
+    height: 50px;
+    background-color: rgb(0, 136, 255);
+}
+.dvText ul{
+    display: flex;
+    justify-content: space-between;
+}
+.dvText h4{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+.dvListSer{
+    width: 100%;
+    height: inherit;
+    display: flex;
+    overflow: auto;
 }
 .containerMainB button{
     border: none;
