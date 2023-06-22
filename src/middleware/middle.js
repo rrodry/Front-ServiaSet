@@ -69,7 +69,7 @@ export function handleLogOut(){
 }
 export async function handleDecode(){
   try {
-    return await axios(`http://localhost:3001/decode?token=${Cookies.get("token")}`)
+    return await axios(`${local}/decode?token=${Cookies.get("token")}`)
   } catch (error) {
     return error
   }
